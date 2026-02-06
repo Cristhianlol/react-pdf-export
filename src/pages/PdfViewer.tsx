@@ -1,24 +1,28 @@
 import { PDFViewer } from "@react-pdf/renderer";
-import ExportPDF from "../pdf/ExportPDF";
 
-const PdfViewer = () => {
+import ExportStatusPDF from "../pdf/ExportPDF";
+import ExportPurchaseOrderPDF from "../pdf/ExportPurchaseOrderPDF";
+
+type Props = {
+  type: "status" | "purchase";
+};
+
+const PdfViewer = ({ type }: Props) => {
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <PDFViewer
-        style={{
-          width: "100%",
-          height: "100%",
-          border: "none"
-        }}
-        showToolbar
-      >
-        <ExportPDF />
+    <div style={{ width: "100vw", height: "80vh" }}>
+      <PDFViewer style={{ width: "100%", height: "100%", border: "none" }}>
+        {type === "status" ? (
+          <ExportStatusPDF />
+        ) : (
+          <ExportPurchaseOrderPDF />
+        )}
       </PDFViewer>
     </div>
   );
 };
 
 export default PdfViewer;
+
 
 
 

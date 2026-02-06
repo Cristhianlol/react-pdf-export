@@ -107,6 +107,10 @@ export const OBSERVACIONES: Observacion[] = [
   {
     fecha: "11-11",
     observacion: "Descarga de mercadería en destino"
+  },
+  {
+    fecha: "11-11",
+    observacion: "Descarga de mercadería en destino"
   }
 ];
 
